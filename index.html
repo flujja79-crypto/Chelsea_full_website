@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+        <style>
+        /* 1. INCREASED HEIGHT */
+        :root {
+            --carousel-height: 600px; /* Define height as a CSS variable for easy access */
+        }
+        .foot_first_li_element{
+            font-style: oblique !important;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .gdgggg{
+            background: linear-gradient(to right, #00008B, #00008B);
+        }
+        .thisFello{
+            background: linear-gradient(to right, #00008B, transparent);
+            color: transparent;
+        }
+        .background-horo{
+            background-image: url(backgd-blueone.webp);
+        }
+        .bagimag{
+            height: 600px;
+            background-image: url(belowBlue.webp);
+        }
+        #translation{
+            transform:translateY(-500px)
+        }
+        #divisions{
+            width: calc(33.333% - 7px);
+            margin:0 20px;
+        }
+        
+        /* Parent positioning context */
+        #parentDiv {
+            /* This is the key to preventing the content overlap */
+            height: var(--carousel-height); 
+            position: relative; 
+            margin: 0 auto; 
+            border: 0; /* Border for visual reference only */
+        }
+        
+        /* The Absolute Carousel */
+        #fullWidthFadingCarousel {
+            height: var(--carousel-height);
+            /* Carousel remains position-absolute to cover the parent */
+        }
+
+        .carousel-item img {
+            height: var(--carousel-height);
+            object-fit: cover;
+        }
+
+        /* 2. THE SPACER DIV (Alternative to padding/margin on content) */
+        /* It has the same height as the carousel to push content below the parent */
+        #contentSpacer {
+            height: var(--carousel-height);
+        }
+        caption{
+            color:whitesmoke;
+        }
+        #first li:hover{
+            border-bottom:4px solid #00008B !important;
+        }
+        #first li a{
+            color: #00008B !important;
+        }
+
+    /* * 1. Essential styles for the three-image layout 
+     */
+    .custom-carousel-inner {
+        overflow: hidden; /* Important to hide the next/prev slides cleanly */
+        padding: 0 5px; /* Adds 5px padding on the left/right of the entire slider */
+    }
+
+    .custom-slide-content {
+        /* Distributes space equally among the three images */
+        width: 100%;
+    }
+
+    .custom-img {
+        /* Calculate: (100% / 3 images) - (2 * 5px margin adjustment) */
+        width: calc(33.333% - 7px); /* 7px is a value that works well for a 5px gap when using justify-content-between */
+        height: 420px !important; /* Maintain aspect ratio */
+        object-fit: cover; /* Optional: ensures images fill the space */
+        
+        /* 2. Apply 5px margin/spacing between them */
+        margin: 0 12px; 
+    }
+    
+    /* Remove margin on the first and last image in the visible group to keep the spacing even */
+    .custom-slide-content .custom-img:first-child {
+        margin-left: 0; 
+    }
+    .custom-slide-content .custom-img:last-child {
+        margin-right: 0;
+    }
+
+    .btn-outline-dark:hover {
+        background-color: #00008B; /* Sets the background color to Black */
+        color: white;              /* Keeps the text color white/light for contrast */
+        border-color: #0d6efd;     /* Sets the border color to Bootstrap's default Blue */
+    }
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- top most header -->
+    <div class="bg-light border-bottom py-2" style="border-top:3px solid #00008B;">
+        <div class="container-fluid px-4">
+            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-4">
+                <a href="#" class="text-dark text-decoration-none small fw-semibold">VENUE</a>
+                <a href="#" class="text-dark text-decoration-none small fw-semibold">CHELSEA FOUNDATION</a>
+                <a href="#" class="text-dark text-decoration-none small fw-semibold">NO TO HATE</a>
+            </div>                
+            <div class="d-flex gap-4 align-items-center">
+                <a href="#" class="text-dark text-decoration-none small fw-semibold">LOGIN</a>
+                <a href="#" class="text-dark text-decoration-none small fw-semibold">REGISTER</a>
+                <a href="https://www.nike.com/gb/" class="text-dark text-decoration-none small fw-semibold"><img src="./Nike_Swoosh_Black.webp" height="20"></a>
+                <a href="https://bingx.com/en-us/" class="text-dark text-decoration-none small fw-semibold"><img src="./bingx_header_500x167.webp" height="30"></a>
+                
+            </div>
+
+
+            </div>
+
+        </div>
+        
+    </div>
+
+<!-- the second header with the links -->
+    <div class="d-flex justify-content-between align-items-center">
+       <div class="d-flex ps-2">
+        <img src="Main_Website_Badge_-_Colour.webp" alt="" height="130px">
+       </div> 
+
+       <div class="d-flex">
+        <ul id="first" class="list-group list-group-horizontal list-group-flush">
+            <li class="list-group-item py-5"><a href="#" class="text-decoration-none text-primary fw-bold">LATEST</a></li>
+            <li class="list-group-item py-5 border-transparent"><a href="#" class="fw-bold text-decoration-none text-primary">WATCH</a></li>
+            <li class="list-group-item py-5"><a href="#" class="fw-bold text-decoration-none text-primary">MEN'S TEAM</a></li>
+            <li class="list-group-item py-5"><a href="#" class="fw-bold text-decoration-none text-primary">WOMEN'S TEAM</a></li>
+            <li class="list-group-item py-5"><a href="#" class="fw-bold text-primary text-decoration-none">TICKETS AND HOSPITALITY</a></li>
+            <li class="list-group-item py-5 px-3"><a href="#" class="fw-bold text-decoration-none text-primary">SHOP</a></li>
+        </ul>
+       </div>
+
+       <div class="d-flex">
+        <div class="container-fluid">
+            <img src="download.png" alt="" height="80px">
+        </div>
+        <div class="container-fluid" style="background-color:transparent;">
+            <a href="#" class="text-decoration-none text-dark">
+    <img src="images.png" alt="more" height="80px"> <caption>more</caption>
+            </a>
+        </div>
+       </div>
+    </div>
+
+
+<div class="container-fluid" style="background-color: #00008B;">
+    
+
+
+
+
+    <div class="container-fluid mt-5">
+
+
+        <div id="parentDiv" class="container-fluid w-100">
+            
+            <div id="fullWidthFadingCarousel" 
+                 class="carousel slide carousel-fade position-absolute w-100 top-0 start-0" 
+                 data-bs-ride="carousel" 
+                 data-bs-interval="2400">
+                
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="her2.webp" class="d-block w-100" alt="Image 1">
+                        <div class="carousel-caption d-none d-md-block"><h5>First Slide - Height: 500px</h5></div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="him1.webp" class="d-block w-100" alt="Image 2">
+                        <div class="carousel-caption d-none d-md-block"><h5>Second Slide - Full Parent Width</h5></div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="him2.webp" class="d-block w-100" alt="Image 3">
+                        <div class="carousel-caption d-none d-md-block"><h5>Third Slide - Fixed Overlap</h5></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+      
+        
+       
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container my-5 p-5">
+    <div class="container-fluid d-flex">
+
+        <div class="container-fluid d-flex" style="color: #00008B;">
+            <div class="container-fluid d-flex"><H1 class="display-5 fw-bold">Latest News </H1>
+            </div>
+            <div class="container-fluid start-0 top-0 d-flex">
+               <img src="long-arrow-right.png" alt="" height="50px">
+            </div>
+        </div>
+    
+    <div class="d-flex justify-content-end mb-2">
+        <button class="btn btn-outline-dark me-2 custom-control-prev" type="button" data-bs-target="#customSlider" data-bs-slide="prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+            </svg>
+        </button>
+        <button class="btn btn-outline-dark custom-control-next" type="button" data-bs-target="#customSlider" data-bs-slide="next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+            </svg>
+        </button>
+    </div>
+
+    </div>
+
+    <div id="customSlider" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+        
+        <div class="carousel-inner custom-carousel-inner">
+            
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-between custom-slide-content">
+
+                    <div class="card border-0 rounded-0 custom-img">
+                    <img src="sliderone.webp" class="card-img-top rounded-0" alt="Image 1">
+                    <div class="card-body fw-semibold" style="color: #00008B;">
+                        Lorem ipsum dolor sit amet. <br>
+                        Lorem, ipsum dolor. <br>
+                        <hr>
+                        <div class="containter-fluid justify-content-between d-flex">
+                            <div class="d-flex">men</div>
+                            <div class="d-flex">25 hours</div>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div class="card border-0 rounded-0 custom-img">
+                        <img src="slider2.webp" class="card-img-top rounded-0" alt="Image2">
+                        <div class="card-body fw-semibold" style="color: #00008B;">
+                        Lorem ipsum dolor sit amet. <br>
+                        Lorem, ipsum dolor. <br>
+                        <hr>
+                        <div class="containter-fluid justify-content-between d-flex">
+                            <div class="d-flex">men</div>
+                            <div class="d-flex">25 hours</div>
+                        </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="card border-0 rounded-0 custom-img">
+                        <img src="slider3.webp" class="card-img-top rounded-0" alt="Image 3">
+                        <div class="card-body fw-semibold" style="color: #00008B;">
+                        Lorem ipsum dolor sit amet. <br>
+                        Lorem, ipsum dolor. <br>
+                        <hr>
+                        <div class="containter-fluid justify-content-between d-flex">
+                            <div class="d-flex">men</div>
+                            <div class="d-flex">25 hours</div>
+                        </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="d-flex justify-content-between custom-slide-content">
+                    <img src="slider4.webp" class="custom-img" alt="Image 4">
+                    <img src="slider5.webp" class="custom-img" alt="Image 5">
+                    <img src="slider6.webp" class="custom-img" alt="Image 6">
+                </div>
+            </div>
+
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container my-5 p-5">
+    <div class="container-fluid d-flex">
+
+        <div class="container-fluid d-flex" style="color: #00008B;">
+            <div class="container-fluid d-flex"><H1 class="display-5 fw-bold">Latest News </H1>
+            </div>
+            <div class="container-fluid start-0 top-0 d-flex">
+               <img src="long-arrow-right.png" alt="" height="50px">
+            </div>
+        </div>
+    
+    <div class="d-flex justify-content-end mb-2">
+        <button class="btn btn-outline-dark me-2 custom-control-prev" type="button" data-bs-target="#customSlider" data-bs-slide="prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+            </svg>
+        </button>
+        <button class="btn btn-outline-dark custom-control-next" type="button" data-bs-target="#customSlider" data-bs-slide="next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+            </svg>
+        </button>
+    </div>
+
+    </div>
+
+
+    
+    <div id="customSlider" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+        
+        <div class="carousel-inner custom-carousel-inner">
+            
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-between custom-slide-content">
+
+                    <div class="card border-0 rounded-0 custom-img">
+                    <img src="sliderone.webp" class="card-img-top rounded-0" alt="Image 1">
+                    <div class="card-body fw-semibold" style="color: #00008B;">
+                        Lorem ipsum dolor sit amet. <br>
+                        Lorem, ipsum dolor. <br>
+                        <hr>
+                        <div class="containter-fluid justify-content-between d-flex">
+                            <div class="d-flex">men</div>
+                            <div class="d-flex">25 hours</div>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div class="card border-0 rounded-0 custom-img">
+                        <img src="slider2.webp" class="card-img-top rounded-0 alt="Image 2">
+                        <div class="card-body fw-semibold" style="color: #00008B;">
+                        Lorem ipsum dolor sit amet. <br>
+                        Lorem, ipsum dolor. <br>
+                        <hr>
+                        <div class="containter-fluid justify-content-between d-flex">
+                            <div class="d-flex">men</div>
+                            <div class="d-flex">25 hours</div>
+                        </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="card border-0 rounded-0 custom-img">
+                        <img src="slider3.webp" class="card-img-top rounded-0" alt="Image 3">
+                        <div class="card-body fw-semibold" style="color: #00008B;">
+                        Lorem ipsum dolor sit amet. <br>
+                        Lorem, ipsum dolor. <br>
+                        <hr>
+                        <div class="containter-fluid justify-content-between d-flex">
+                            <div class="d-flex">men</div>
+                            <div class="d-flex">25 hours</div>
+                        </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="d-flex justify-content-between custom-slide-content">
+                    <img src="slider4.webp" class="custom-img" alt="Image 4">
+                    <img src="slider5.webp" class="custom-img" alt="Image 5">
+                    <img src="slider6.webp" class="custom-img" alt="Image 6">
+                </div>
+            </div>
+
+            </div>
+
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid">
+
+
+    <div class="container-fluid d-flex justify-content-between py-5 px-5 mx-0 bg-primary background-horo">
+        <div class="card d-flex rounded-0 border-0" id="divisions">
+            <div class="card-body mx-auto">
+                <p class="">SAT 04 OCT 2025</p>
+                <P class="text-align-center">PREMIER LEADGE</P>
+                <div class="d-flex container justify-content-between">
+                    <div class="card d-flex border-0">
+                        <img src="chelseaa.png" class="card-img-top" alt="" height="70px" width="20px">
+                        <div class="card-body">
+                            Chelsea
+                        </div>
+                    </div>
+                    <div class="card d-flex rounded-0 border-0 mx-auto">
+                        <div class="border"> 2 - 1</div>
+                    </div>
+                    <div class="card d-flex border-0">
+                        <img src="liverpool.png" class="card-img-top" height="70px" width="30px" alt="">
+                        <div class="card-body">
+                            liverpool
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="p-3">STAMFORD BRIDGE</div>
+                <div class="text-align-center mb-5" style="background-color: #00008B;">
+                    <a href="" class="text-decoration-none text-white">Match center 
+
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card d-flex rounded-0 border-0" id="divisions">
+            <div class="card-body">Lorem ipsum, dolor sit amet consectetur <br> adipisicing elit. Cupiditate, minima!</div>
+        </div>
+        <div class="card d-flex rounded-0 border-0" id="divisions">
+
+    <div class="card-body">Lorem ipsum, dolor sit amet consectetur <br> adipisicing elit. Cupiditate, minima!</div>
+       
+
+        </div>
+    </div>
+
+
+        <div id="translation" class="container-fluid text-align-center w-50 pe-0">
+    <div class="d-flex justify-content-between bg-light text-white text-align-center rounded-5 px-5 pe-0 me-0">
+        <button class="d-flex bg-light border-0 px-3 py-3">MENS</button>
+        <button class="d-flex bg-light border-0 px-3 py-3">WOMENS</button>
+        <button class="d-flex bg-light border-0 px-3 py-3">ACADEMY</button>
+    </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid d-flex my-0" style="background-color: #00008B;">
+
+    <div class="gdgggg d-flex" style="width: 50%;">
+        <ul>
+            <li class="text-decoration-none list-unstyled">
+       <div class="display-5 fw-bold text-white container pt-5 m-5">
+         Blues legends return to <br> the Bridge this <br> weekend!
+        </div>
+            </li>
+            <li class="text-decoration-none list-unstyled">
+        <div class="gloomy pt-5 m-5 text-white">        
+            Chelsea Legends take on Liverpool Legends <br> 
+            on Saturday <br> as some of the greatest players to ever wear blue grace <br> 
+            Stamford Bridge once again. Make sure you don't miss out! <br>
+
+            Secure your seat now!
+        </div>
+            </li>
+
+        </ul>
+    </div>
+    <div class="bagimag d-flex" style="width: 50%;">
+        <div class="thisFello"> THI SI THE MOMENT WE'VE BEEN WAITING FOR </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<footer>
+    <div class="align-items-center d-flex justify-content-center" style="height: 200px; border-bottom: 20px solid #00008B;">
+    <ul class="list-group border-0"> 
+        <li class="foot_first_li_element text-align-center list-unstyled list-group-item text-center border-0">   principle partners</li>
+        <li class="list-group-item border-0"><p><img src="Nike_Swoosh_Black.webp" alt="" height="30px"><img src="bingx_header_500x167.webp" alt=""> </p>
+        </li>
+    </ul>
+    </div>
+
+    <div class="align-items-center text-align-center d-flex justify-content-center">
+        <ul class="list-group">
+
+            <li class="list-group-item text-center">official patners</li>
+            <li class="list-group-item">
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item"><a href=""><img src="" alt=""><img src="" alt="" height="30px"></a></li>
+                    <li class="list-group-item"><a href=""><img src="" alt=""><img src="" alt="" height="30px"></a></li>
+                    <li class="list-group-item"><a href=""><img src="" alt=""><img src="" alt="" height="30px"></a></li>
+                    <li class="list-group-item"><a href=""><img src="" alt=""><img src="" alt="" height="30px"></a></li>
+                    <li class="list-group-item"><a href=""><img src="" alt=""><img src="" alt="" height="30px"></a></li>
+                </ul>
+            </li>
+
+            <li class="list-group-item">
+                <ul class="list-group list-group-horizontal">
+                <li class="list-group-item"><a href=""><img src="" alt=""></a></li>
+                <li class="list-group-item"><a href=""><img src="" alt=""></a></li>
+                <li class="list-group-item"><a href=""><img src="" alt=""></a></li>
+                <li class="list-group-item"><a href=""><img src="" alt=""></a></li>
+                <li class="list-group-item"><a href=""><img src="" alt=""></a></li>
+
+                </ul>
+            </li>
+
+            <li class="list-group-item text-center">
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item"><a href=""><img src="" alt=""></a></li>
+                    <li class="list-group-item"><a href=""><img src="" alt=""></a></li>
+                    <li class="list-group-item"><a href=""><img src="" alt=""></a></li>
+                </ul>
+            </li>
+
+        </ul>
+
+        
+
+
+    </div>
+</footer>
+
+
+
+
+
+
+</body>
+</html>
