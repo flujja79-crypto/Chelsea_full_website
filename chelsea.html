@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tickets & Hospitality - Chelsea FC</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --chelsea-blue: #034694;
+        --chelsea-light-blue: #6a9ad6;
+        --chelsea-gold: #dba111;
+        --dark-bg: #001c48;
+      }
+
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background-color: #f8f9fa;
+      }
+
+      /* Header Styles */
+      .top-nav {
+        background-color: var(--chelsea-blue);
+        color: white;
+        font-size: 0.9rem;
+      }
+
+      .top-nav a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .top-nav a:hover {
+        text-decoration: underline;
+      }
+
+      .main-header {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        font-weight: bold;
+        font-size: 1.8rem;
+        color: var(--chelsea-blue);
+      }
+
+      .logo span {
+        color: var(--chelsea-gold);
+      }
+
+      .nav-link {
+        color: #333 !important;
+        font-weight: 500;
+        padding: 0.8rem 1rem !important;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--chelsea-blue) !important;
+        background-color: rgba(3, 70, 148, 0.05);
+      }
+
+      /* Hero Section */
+      .tickets-hero {
+        background: linear-gradient(
+            rgba(0, 28, 72, 0.85),
+            rgba(0, 28, 72, 0.85)
+          ),
+          url("https://images.unsplash.com/photo-1566577739112-5180d4bf9390?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80")
+            center/cover no-repeat;
+        color: white;
+        padding: 5rem 0;
+        margin-bottom: 3rem;
+      }
+
+      /* Section Styles */
+      .section-title {
+        color: var(--chelsea-blue);
+        border-bottom: 2px solid var(--chelsea-gold);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .card {
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        margin-bottom: 1.5rem;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card-title {
+        color: var(--chelsea-blue);
+      }
+
+      .price-tag {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--chelsea-gold);
+      }
+
+      /* Hospitality Packages */
+      .package-card {
+        border-left: 4px solid var(--chelsea-blue);
+      }
+
+      .premium-package {
+        border-left: 4px solid var(--chelsea-gold);
+      }
+
+      /* Match Tickets */
+      .match-card {
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .match-date {
+        background-color: var(--chelsea-blue);
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .match-info {
+        padding: 15px;
+      }
+
+      /* VIP Experience */
+      .vip-feature {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .vip-icon {
+        font-size: 2.5rem;
+        color: var(--chelsea-gold);
+        margin-bottom: 15px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark-bg);
+        color: white;
+        margin-top: 4rem;
+      }
+
+      .footer-links a {
+        color: #ccc;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-links a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .copyright {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        color: #aaa;
+      }
+
+      /* CTA Buttons */
+      .btn-chelsea {
+        background-color: var(--chelsea-blue);
+        color: white;
+        padding: 10px 20px;
+        font-weight: 600;
+      }
+
+      .btn-chelsea:hover {
+        background-color: var(--dark-bg);
+        color: white;
+      }
+
+      .btn-gold {
+        background-color: var(--chelsea-gold);
+        color: white;
+        padding: 10px 20px;
+        font-weight: 600;
+      }
+
+      .btn-gold:hover {
+        background-color: #b8860b;
+        color: white;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .tickets-hero {
+          padding: 3rem 0;
+        }
+
+        .nav-link {
+          padding: 0.5rem 0.8rem !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- top most header -->
+    <div
+      class="bg-light border-bottom py-2"
+      style="border-top: 3px solid #00008b"
+    >
+      <div class="container-fluid px-4">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex gap-4">
+            <a href="#" class="text-dark text-decoration-none small fw-semibold"
+              >VENUE</a
+            >
+            <a href="#" class="text-dark text-decoration-none small fw-semibold"
+              >CHELSEA FOUNDATION</a
+            >
+            <a href="#" class="text-dark text-decoration-none small fw-semibold"
+              >NO TO HATE</a
+            >
+          </div>
+          <div class="d-flex gap-4 align-items-center">
+            <a href="#" class="text-dark text-decoration-none small fw-semibold"
+              >LOGIN</a
+            >
+            <a href="#" class="text-dark text-decoration-none small fw-semibold"
+              >REGISTER</a
+            >
+            <a
+              href="https://www.nike.com/gb/"
+              class="text-dark text-decoration-none small fw-semibold"
+              ><img src="Nike_Swoosh_Black.webp" height="20"
+            /></a>
+            <a
+              href="https://bingx.com/en-us/"
+              class="text-dark text-decoration-none small fw-semibold"
+              ><img src="bingx.webp" height="30"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- the second header with the links -->
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex ps-2">
+        <img src="Main_Website_Badge_-_Colour.webp" alt="" height="130px" />
+      </div>
+
+      <div class="d-flex">
+        <ul
+          id="first"
+          class="list-group list-group-horizontal list-group-flush"
+        >
+          <li class="list-group-item py-5">
+            <a href="#" class="text-decoration-none text-primary fw-bold"
+              >LATEST</a
+            >
+          </li>
+          <li class="list-group-item py-5 border-transparent">
+            <a href="#" class="fw-bold text-decoration-none text-primary"
+              >WATCH</a
+            >
+          </li>
+          <li class="list-group-item py-5">
+            <a href="#" class="fw-bold text-decoration-none text-primary"
+              >MEN'S TEAM</a
+            >
+          </li>
+          <li class="list-group-item py-5">
+            <a href="#" class="fw-bold text-decoration-none text-primary"
+              >WOMEN'S TEAM</a
+            >
+          </li>
+          <li class="list-group-item py-5">
+            <a href="#" class="fw-bold text-primary text-decoration-none"
+              >TICKETS AND HOSPITALITY</a
+            >
+          </li>
+          <li class="list-group-item py-5 px-3">
+            <a href="#" class="fw-bold text-decoration-none text-primary"
+              >SHOP</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="d-flex">
+        <div class="container-fluid">
+          <img src="download.png" alt="" height="80px" />
+        </div>
+        <div class="container-fluid" style="background-color: transparent">
+          <a href="#" class="text-decoration-none text-dark">
+            <img src="Screenshot 2025-10-14 120929.png" alt="more" height="" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- End of the header -->
+
+    <!-- Hero Section -->
+    <section class="tickets-hero">
+      <div class="container text-center">
+        <h1 class="display-4 fw-bold">Tickets & Hospitality</h1>
+        <p class="lead">
+          Experience Chelsea FC like never before at Stamford Bridge
+        </p>
+        <div class="mt-4">
+          <a href="#match-tickets" class="btn btn-light btn-lg me-3"
+            >Match Tickets</a
+          >
+          <a href="#hospitality" class="btn btn-gold btn-lg">VIP Hospitality</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+      <!-- Match Tickets Section -->
+      <section id="match-tickets" class="mb-5">
+        <h2 class="section-title">Match Tickets</h2>
+
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card match-card">
+              <div class="match-date">
+                <h4 class="mb-0">Saturday, 15 March 2025</h4>
+                <p class="mb-0">Premier League | 15:00 GMT</p>
+              </div>
+              <div class="match-info">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h3>Chelsea vs Manchester United</h3>
+                    <p class="text-muted">Stamford Bridge, London</p>
+                  </div>
+                  <div class="text-end">
+                    <p class="price-tag">From £45</p>
+                    <a href="#" class="btn btn-chelsea">Buy Tickets</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card match-card">
+              <div class="match-date">
+                <h4 class="mb-0">Wednesday, 2 April 2025</h4>
+                <p class="mb-0">Champions League | 19:45 GMT</p>
+              </div>
+              <div class="match-info">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h3>Chelsea vs Bayern Munich</h3>
+                    <p class="text-muted">Stamford Bridge, London</p>
+                  </div>
+                  <div class="text-end">
+                    <p class="price-tag">From £65</p>
+                    <a href="#" class="btn btn-chelsea">Buy Tickets</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card match-card">
+              <div class="match-date">
+                <h4 class="mb-0">Saturday, 12 April 2025</h4>
+                <p class="mb-0">Premier League | 12:30 GMT</p>
+              </div>
+              <div class="match-info">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h3>Chelsea vs Arsenal</h3>
+                    <p class="text-muted">Stamford Bridge, London</p>
+                  </div>
+                  <div class="text-end">
+                    <p class="price-tag">From £55</p>
+                    <a href="#" class="btn btn-chelsea">Buy Tickets</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <a href="#" class="btn btn-outline-primary">View All Fixtures</a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Ticket Information</h5>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <i class="fas fa-ticket-alt me-2 text-primary"></i>
+                    <strong>Membership Required</strong>
+                    <p class="small mb-0">
+                      You need a Chelsea membership to purchase tickets
+                    </p>
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-users me-2 text-primary"></i>
+                    <strong>Ticket Limits</strong>
+                    <p class="small mb-0">
+                      Maximum of 4 tickets per membership
+                    </p>
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-mobile-alt me-2 text-primary"></i>
+                    <strong>Digital Tickets</strong>
+                    <p class="small mb-0">
+                      All tickets are digital and accessible via the Chelsea app
+                    </p>
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-exchange-alt me-2 text-primary"></i>
+                    <strong>Ticket Exchange</strong>
+                    <p class="small mb-0">
+                      Sell or transfer tickets through the official exchange
+                    </p>
+                  </li>
+                </ul>
+                <div class="mt-3">
+                  <a href="#" class="btn btn-outline-primary w-100"
+                    >Become a Member</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hospitality Packages -->
+      <section id="hospitality" class="mb-5">
+        <h2 class="section-title">VIP Hospitality Experiences</h2>
+        <p class="lead mb-4">
+          Elevate your matchday with our exclusive hospitality packages
+        </p>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="card package-card h-100">
+              <div class="card-body">
+                <h5 class="card-title">The Blues Lounge</h5>
+                <p class="price-tag">£299 per person</p>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Premium match
+                    ticket
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Pre-match
+                    three-course meal
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Complimentary
+                    bar (beer, wine, soft drinks)
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Matchday
+                    programme
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Former player
+                    Q&A session
+                  </li>
+                </ul>
+                <a href="#" class="btn btn-chelsea w-100">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card package-card premium-package h-100">
+              <div class="card-body">
+                <h5 class="card-title">The Shed End Suite</h5>
+                <p class="price-tag">£450 per person</p>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Executive box
+                    seating
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Gourmet
+                    four-course dining
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Premium bar
+                    package
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Complimentary
+                    parking
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Hosted by
+                    Chelsea legend
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Post-match
+                    analysis
+                  </li>
+                </ul>
+                <a href="#" class="btn btn-gold w-100">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card package-card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Stamford Club</h5>
+                <p class="price-tag">£650 per person</p>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Centrally
+                    located premium seats
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Fine dining
+                    experience
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Champagne
+                    reception
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Complimentary
+                    matchday gift
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Manager's
+                    pre-match briefing
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Player meet &
+                    greet opportunity
+                  </li>
+                </ul>
+                <a href="#" class="btn btn-chelsea w-100">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIP Experience Features -->
+      <section class="mb-5">
+        <h2 class="section-title">The VIP Experience</h2>
+
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="vip-feature">
+              <div class="vip-icon">
+                <i class="fas fa-utensils"></i>
+              </div>
+              <h5>Gourmet Dining</h5>
+              <p class="text-muted">
+                Enjoy exquisite meals prepared by our award-winning chefs
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="vip-feature">
+              <div class="vip-icon">
+                <i class="fas fa-glass-cheers"></i>
+              </div>
+              <h5>Premium Bar</h5>
+              <p class="text-muted">
+                Unlimited drinks from our premium selection throughout your
+                experience
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="vip-feature">
+              <div class="vip-icon">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <h5>Chelsea Legends</h5>
+              <p class="text-muted">
+                Meet and interact with Chelsea FC legends on matchday
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="vip-feature">
+              <div class="vip-icon">
+                <i class="fas fa-parking"></i>
+              </div>
+              <h5>Complimentary Parking</h5>
+              <p class="text-muted">
+                Stress-free arrival with reserved parking close to the stadium
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Group Bookings -->
+      <section class="mb-5">
+        <div class="card bg-light">
+          <div class="card-body p-5 text-center">
+            <h3 class="card-title">Group Bookings & Corporate Events</h3>
+            <p class="card-text lead">
+              Planning a corporate event, special celebration, or group outing?
+              Our dedicated team can create a bespoke experience for your group.
+            </p>
+            <div class="mt-4">
+              <a href="#" class="btn btn-chelsea btn-lg me-3">Enquire Now</a>
+              <a href="#" class="btn btn-outline-primary btn-lg"
+                >Download Brochure</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div
+          class="align-items-center d-flex justify-content-center"
+          style="
+            background-color: white;
+            height: 200px;
+            border-bottom: 20px solid #00008b;
+          "
+        >
+          <ul class="list-group border-0">
+            <li
+              class="foot_first_li_element text-align-center list-unstyled list-group-item text-center border-0"
+            >
+              principle partners
+            </li>
+            <li class="list-group-item border-0">
+              <p>
+                <img src="images/Nike_Swoosh_Black.webp" alt="" height="30px" />
+                <img src="images/bingx.webp" alt="" />
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="align-items-center text-align-center d-flex justify-content-center"
+        >
+          <ul class="list-group">
+            <li class="list-group-item text-center">official patners</li>
+            <li class="list-group-item">
+              <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/abm_footer_600x200.webp"
+                      alt=""
+                      height="50px" /><img
+                      src="images/Ascott_Logo_wo_Crest_Blue.webp"
+                      alt=""
+                      height="30px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img src="images/cadbury_footer_600x200.webp" alt="" /><img
+                      src="images/carling_footer_600x200.webp"
+                      alt=""
+                      height="30px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/champions_travel_footer_600x200.webp"
+                      alt="" /><img
+                      src="images/damac_footer_600x200.webp"
+                      alt=""
+                      height="30px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/easports_footer_600x200.webp"
+                      alt="" /><img
+                      src="images/fpt_footer_600x200.webp"
+                      alt=""
+                      height="30px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/linglone_footer_600x200.webp"
+                      alt="" /><img
+                      src="images/Main_Website_Badge_-_Colour.webp"
+                      alt=""
+                      height="30px"
+                  /></a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="list-group-item">
+              <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/msc_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/damac_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/predator_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/mws_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/msport_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="list-group-item text-center">
+              <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/abm_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/ticketmaster_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/twilio_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pt-5">
+      <div class="container p-5">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <h5>Chelsea Football Club</h5>
+            <p>
+              Stamford Bridge<br />
+              Fulham Road<br />
+              London<br />
+              SW6 1HS
+            </p>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <h5>Ticket Support</h5>
+            <div class="footer-links">
+              <a href="#">Contact Us</a>
+              <a href="#">FAQs</a>
+              <a href="#">Accessibility</a>
+              <a href="#">Stadium Guide</a>
+              <a href="#">Membership</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <h5>Legal</h5>
+            <div class="footer-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Cookies Policy</a>
+              <a href="#">Terms & Conditions</a>
+              <a href="#">Sustainability Policy</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright text-center">
+          <p>
+            © 2025 Chelsea FC. All rights reserved. No part of this site may be
+            reproduced without our written permission.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
