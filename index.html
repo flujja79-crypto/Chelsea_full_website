@@ -116,6 +116,231 @@
 
 
 
+
+
+
+
+
+
+
+    /* ======================================================= */
+/* !!! ADD THIS CODE INSIDE YOUR EXISTING <style> TAG !!! */
+/* ======================================================= */
+
+
+/* --- 1. Navbar & Header Adjustments (Tablet & Mobile) --- */
+
+/* Hide the top-most header's content on small screens to save space */
+@media (max-width: 767.98px) {
+    .bg-light.border-bottom > .container-fluid > .d-flex {
+        /* Only keep the sponsor logos if needed, otherwise hide the whole top row */
+        display: none !important; 
+    }
+}
+
+/* Adjust the main navbar layout for medium/small screens */
+@media (max-width: 991.98px) {
+    /* Stack the logo, nav links, and sponsor logos vertically */
+    .d-flex.justify-content-between.align-items-center {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Shrink the main logo */
+    .d-flex.ps-2 img {
+        height: 80px;
+        margin-top: 10px;
+    }
+
+    /* Make the main link list wrap or stack */
+    #first {
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: center; /* Center the wrapped items */
+    }
+
+    /* Reduce padding on list items */
+    #first li {
+        padding: 10px 10px !important; 
+        border-bottom: none !important; /* Remove individual borders that look weird when stacked */
+    }
+
+    /* Hide the 'more' image/caption and the extra image for cleaner look */
+    .d-flex > .container-fluid:last-child,
+    .d-flex > .container-fluid:nth-child(2) {
+        display: none !important;
+    }
+}
+
+/* --- 2. Carousel & Banner Adjustments --- */
+
+/* Reduce the overall carousel height for smaller screens */
+@media (max-width: 991.98px) {
+    :root {
+        --carousel-height: 350px; /* Smaller height for tablet */
+    }
+}
+
+@media (max-width: 575.98px) {
+    :root {
+        --carousel-height: 250px; /* Even smaller height for mobile */
+    }
+    .carousel-caption h5 {
+        font-size: 1rem; /* Smaller caption text */
+    }
+}
+
+
+/* --- 3. Three-Image News Slider Adjustments --- */
+
+/* For screens 992px and below (typical tablet view) */
+@media (max-width: 991.98px) {
+    /* Show 2 images per slide instead of 3 */
+    .custom-img {
+        width: calc(50% - 10px); /* Two images per row, with a gap */
+        height: 350px !important;
+        margin: 5px; /* Adjust margin for two-column layout */
+    }
+    .custom-slide-content {
+        justify-content: space-around !important;
+    }
+    /* Re-adjust the first/last child margins for the 2-column view */
+    .custom-slide-content .custom-img:first-child,
+    .custom-slide-content .custom-img:last-child {
+        margin-left: 5px; 
+        margin-right: 5px;
+    }
+}
+
+/* For screens 576px and below (typical mobile view) */
+@media (max-width: 575.98px) {
+    /* Stack images vertically (1 per row) */
+    .custom-img {
+        width: 100%; /* Full width */
+        height: auto !important; /* Auto height to maintain aspect ratio */
+        margin: 10px 0; /* Add vertical margin */
+    }
+    .custom-slide-content {
+        flex-direction: column; /* Stack them */
+        align-items: center;
+    }
+    /* Ensure no residual side margins */
+    .custom-slide-content .custom-img:first-child,
+    .custom-slide-content .custom-img:last-child {
+        margin-left: 0; 
+        margin-right: 0;
+    }
+
+    /* Center the titles and controls */
+    .container-fluid.d-flex > .container-fluid.d-flex:first-child {
+        flex-direction: column;
+        align-items: center;
+    }
+    .display-5.fw-bold {
+        font-size: 2.5rem; /* Smaller title */
+        text-align: center;
+    }
+    .d-flex.justify-content-end.mb-2 {
+        justify-content: center !important; /* Center the controls */
+        width: 100%;
+        margin-top: 15px;
+    }
+}
+
+
+/* --- 4. Three-Column Match/Content Block Adjustments (background-horo) --- */
+
+/* For screens 992px and below (typical tablet view) */
+@media (max-width: 991.98px) {
+    .container-fluid.d-flex.justify-content-between.bg-primary.background-horo {
+        flex-direction: column; /* Stack the columns */
+        padding: 10px !important; /* Less padding */
+    }
+    #divisions {
+        width: 90% !important; /* Make them almost full width */
+        margin: 10px auto !important; /* Center them with vertical spacing */
+    }
+}
+
+
+/* --- 5. Upcoming Match Tabs (translation) Adjustments --- */
+
+@media (max-width: 991.98px) {
+    #translation {
+        transform: translateY(-70px) !important; /* Adjust vertical translation for smaller screens */
+        width: 80% !important; /* Make it wider */
+        margin: 0 auto; /* Center it */
+        padding-right: 0 !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #translation {
+        transform: translateY(-50px) !important; /* Further adjustment for mobile */
+        width: 95% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    #translation .d-flex {
+        padding: 0 !important;
+    }
+    #translation button {
+        font-size: 0.8rem;
+        padding: 8px 5px !important; /* Smaller button padding */
+    }
+}
+
+
+/* --- 6. Large Blue Banner (gdgggg and bagimag) Adjustments --- */
+
+@media (max-width: 991.98px) {
+    .container-fluid.d-flex.my-0 {
+        flex-direction: column; /* Stack the two halves */
+    }
+    .gdgggg, .bagimag {
+        width: 100% !important; /* Make them full width */
+        height: auto !important; /* Allow height to adjust */
+    }
+    .display-5.fw-bold {
+        font-size: 2rem; /* Smaller heading */
+    }
+    .gdgggg ul {
+        padding-left: 1rem !important; /* Adjust list padding */
+    }
+    .gdgggg .gloomy {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    .bagimag {
+        min-height: 250px; /* Ensure image section has some height on mobile */
+        background-position: center; /* Better image positioning */
+    }
+    .thisFello {
+        display: none; /* Hide the overlapping text, as it doesn't work well on mobile */
+    }
+}
+
+
+/* --- 7. Footer Adjustments --- */
+
+@media (max-width: 767.98px) {
+    /* Stack all partner lists for better fit */
+    .list-group-horizontal {
+        flex-direction: column !important; /* Override Bootstrap's horizontal */
+        align-items: center;
+    }
+    .list-group-item {
+        padding: 5px 0; /* Reduced padding */
+        text-align: center;
+    }
+    footer .align-items-center {
+        height: auto !important; /* Allow height to adjust */
+        padding: 20px 0;
+    }
+    .list-group-item p img {
+        height: 20px; /* Smaller sponsor images */
+    }
+}
+
     </style>
 </head>
 <body>
