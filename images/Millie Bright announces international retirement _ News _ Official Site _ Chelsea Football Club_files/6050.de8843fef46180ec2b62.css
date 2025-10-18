@@ -1,0 +1,2 @@
+.tag-list{list-style:none;margin-top:0;padding:0;width:100%}.tag-list__item{display:inline-block;margin-right:8px}
+.tag{border:1px solid #001489;border-radius:24px;color:#001489;display:flex;font-family:Chelsea Basis,sans-serif;font-size:12px;font-size:.75rem;font-weight:500;height:40px;line-height:3.3333333333;padding:0 20px;transition:background-color 1s ease;width:-moz-fit-content;width:fit-content}@media(min-width:1176px){.tag{font-size:16px;font-size:1rem;height:48px;line-height:3}}.tag:hover{background-color:#001489;color:#fff}
