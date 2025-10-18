@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chelsea FC — The Blues</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Hero section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(images/stamford\ bridge.jpeg) center/cover no-repeat;
+      color:white;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+    }
+    .team-img { height: 220px; object-fit: cover; }
+    .logo { width: 80px; height: auto; }
+    .fact-list li { line-height: 1.8; }
+    .gallery img { height: 160px; object-fit: cover; width: 100%; }
+    @media(min-width: 992px) { .team-img { height: 300px; } }
+    .gallery :hover{
+     transition: transform;
+     transform: scale(1.01);
+    }
+  </style>
+</head>
+<body>
+ <!-- top most header -->
+    <div class="bg-light border-bottom py-2" style="border-top:3px solid #00008B;">
+        <div class="container-fluid px-4">
+            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-4">
+                <a href="#" class="text-dark text-decoration-none small fw-semibold">VENUE</a>
+                <a href="#" class="text-dark text-decoration-none small fw-semibold">CHELSEA FOUNDATION</a>
+                <a href="#" class="text-dark text-decoration-none small fw-semibold">NO TO HATE</a>
+            </div>                
+            <div class="d-flex gap-4 align-items-center">
+                <a href="#" class="text-dark text-decoration-none small fw-semibold">LOGIN</a>
+                <a href="#" class="text-dark text-decoration-none small fw-semibold">REGISTER</a>
+                <a href="https://www.nike.com/gb/" class="text-dark text-decoration-none small fw-semibold"><img src="images/Nike_Swoosh_Black.webp" height="40"></a>
+                <a href="https://bingx.com/en-us/" class="text-dark text-decoration-none small fw-semibold"><img src="images/bingx_header_500x167.webp" height="40"></a>
+                
+            </div>
+
+
+            </div>
+
+        </div>
+        
+    </div>
+
+
+
+
+
+<!-- the second header with the links -->
+    <div class="d-flex justify-content-between align-items-center">
+       <div class="d-flex ps-2">
+        <img src="images/Main_Website_Badge_-_Colour.webp" alt="" height="130px">
+       </div> 
+
+       <div class="d-flex">
+        <ul id="first" class="list-group list-group-horizontal list-group-flush">
+            <li class="list-group-item py-5"><a href="latest.html" class="text-decoration-none text-primary fw-bold">LATEST</a></li>
+            <li class="list-group-item py-5 border-transparent"><a href="" class="fw-bold text-decoration-none text-primary">WATCH</a></li>
+            <li class="list-group-item py-5"><a href="#" class="fw-bold text-decoration-none text-primary">MEN'S TEAM</a></li>
+            <li class="list-group-item py-5"><a href="#" class="fw-bold text-decoration-none text-primary">WOMEN'S TEAM</a></li>
+            <li class="list-group-item py-5"><a href="#" class="fw-bold text-primary text-decoration-none">TICKETS AND HOSPITALITY</a></li>
+            <li class="list-group-item py-5 px-3"><a href="#" class="fw-bold text-decoration-none text-primary">SHOP</a></li>
+        </ul>
+       </div>
+
+       <div class="d-flex">
+        <div class="container-fluid">
+            <img src="download.PNG" alt="" height="80px">
+        </div>
+        <div class="container-fluid" style="background-color:transparent;">
+            <a href="#" class="text-decoration-none text-dark">
+    <img src="images/Screenshot_14-10-2025_123655_www.chelseafc.com.jpeg" alt="more" height="80px"> <caption>more</caption>
+            </a>
+        </div>
+       </div>
+    </div>
+
+<!-- End of the header -->
+
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container text-center py-5">
+      <h1 class="display-5 fw-bold">Chelsea Football Club</h1>
+      <p class="lead">The Blues — Founded 1905 | Home: Stamford Bridge | Based in Fulham, London</p>
+      <a href="https://www.chelseafc.com/" class="btn btn-primary btn-lg mt-3" target="_blank" rel="noopener">Official website</a>
+    </div>
+  </header>
+
+  <!-- Identity & Quick facts -->
+  <section id="identity" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h2>Identity & Quick Facts</h2>
+          <p class="lead">Chelsea FC ("The Blues") are one of England's most recognisable clubs, competing in the Premier League and regularly in European competitions.</p>
+          <ul class="list-unstyled fact-list">
+            <li><strong>Founded:</strong> 10 March 1905</li>
+            <li><strong>Stadium:</strong> Stamford Bridge (Fulham, London)</li>
+            <li><strong>Owner:</strong> BlueCo</li>
+            <li><strong>Chairman:</strong> Todd Boehly</li>
+            <li><strong>Manager:</strong> Enzo Maresca</li>
+            <li><strong>Nickname:</strong> The Blues</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <img src="images/stamford bridge.jpeg" alt="Stamford Bridge" height="300px" class="img-fluid rounded shadow-md">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History -->
+  <section id="history" class="py-5 bg-light">
+    <div class="container">
+      <h2>History & Legacy</h2>
+      <p>Chelsea were founded by Gus Mears in 1905. The club rose to prominence in the 20th and 21st centuries, especially after significant investment in the 2000s which led to domestic and European success.</p>
+      <div class="row g-4 mt-3">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="images/2012trophy.jpeg" class="card-img-top team-img" alt="2012 Champions League">
+            <div class="card-body">
+              <h5 class="card-title">European Success</h5>
+              <p class="card-text">Chelsea won the UEFA Champions League in 2012 and 2021 and have multiple other European trophies.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="images/chelsea.jpeg" class="card-img-top team-img" alt="Historic squad">
+            <div class="card-body">
+              <h5 class="card-title">Domestic Titles</h5>
+              <p class="card-text">The Blues have won multiple top-flight titles, FA Cups and League Cups across their history.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="images/chelsea fans.webp" class="card-img-top team-img" alt="Fans">
+            <div class="card-body">
+              <h5 class="card-title">Global Brand</h5>
+              <p class="card-text">Chelsea is a global sporting brand with millions of supporters worldwide and strong commercial revenues.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trophies -->
+  <section id="trophies" class="py-5">
+    <div class="container">
+      <h2>Trophies & Records</h2>
+      <div class="table-responsive shadow-sm rounded mt-3">
+        <table class="table table-striped">
+          <thead>
+            <tr><th>Competition</th><th>Wins</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Top Flight / Premier League</td><td>6</td></tr>
+            <tr><td>FA Cup</td><td>8</td></tr>
+            <tr><td>League Cup (EFL Cup)</td><td>5</td></tr>
+            <tr><td>UEFA Champions League</td><td>2</td></tr>
+            <tr><td>UEFA Europa League</td><td>2</td></tr>
+            <tr><td>UEFA Cup Winners' Cup</td><td>2</td></tr>
+            <tr><td>UEFA Conference League</td><td>1</td></tr>
+            <tr><td>UEFA Super Cup</td><td>2</td></tr>
+            <tr><td>FIFA Club World Cup</td><td>2</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current season -->
+  <section id="season" class="py-5 bg-light" >
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h2>2025–26 Season Snapshot</h2>
+          <p class="lead">Manager: Enzo Maresca | Competitions: Premier League, FA Cup, EFL Cup, UEFA Champions League</p>
+          <ul>
+            <li>Key players: Moisés Caicedo, Enzo Fernández, etc.</li>
+            <li>Average attendance: ~39,700</li>
+            <li>Recent notable result: 5–1 win vs West Ham United (22 Aug 2025)</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Latest News</h5>
+              <p class="card-text">Chelsea returned to the Champions League for the 2025–26 season and continue investment in squad depth. Replace this block with dynamic feed or blog posts.</p>
+              <a href="#gallery" class="btn btn-outline-primary">See gallery</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="py-5" bg-primary>
+    <div class="container">
+      <h2>Gallery</h2>
+      <div class="row g-3 mt-3 gallery">
+        <div class="col-6 col-md-6"><img src="images/chelsea-fans.jpg" alt="Chelsea 2021" class="rounded shadow-md h-100"></div>
+        <div class="col-6 col-md-6"><img src="images/Premier legue.jpeg" alt="Trophy" class="rounded shadow-md h-100"></div>
+        <div class="col-6 col-md-6"><img src="images/supporters-club-photo-1.jpeg" alt="Fans" class="rounded shadow-md h-75"></div>
+        <div class="col-6 col-md-6"><img src="images/chelsea-cup-nike-home-stadium-shirt-2025-26-with-world-champions-25-chest-badge..jpg" alt="Shirt" class="rounded shadow-md h-75"></div>
+      <div class="col-sm-6">
+        <div class="card h-100">
+          <img src="Gittens_George_England_U21_GettyImages-2240831042.webp" class="card-img-top team-img img-fluid moving-img" alt="Internationals">
+          <div class="card-body">
+            <h5 class="title text-primary">Internationals</h5>
+            <h1 class="card-text text-primary">Internationals: George and Gittens combine for England under 21s</h1>
+
+          </div>
+        </div>
+      </div>
+    
+    
+    <div class="col-sm-6">
+      <div class="card h-100">
+        <img src="Twente_UWCL_Oct_25-crop.webp" alt="Women's Team">
+        <div class="card-body">
+          <h1 class="card-text text-primary">Chelsea vs Pis:kick-off time, TV channel, How to watch and more</h1>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+   <footer>
+        <div
+          class="align-items-center d-flex justify-content-center"
+          style="
+            background-color: white;
+            height: 200px;
+            border-bottom: 20px solid #00008b;
+          "
+        >
+          <ul class="list-group border-0">
+            <li
+              class="foot_first_li_element text-align-center list-unstyled list-group-item text-center border-0"
+            >
+              principle partners
+            </li>
+            <li class="list-group-item border-0">
+              <p>
+                <img src="images/Nike_Swoosh_Black.webp" alt="" height="30px" />
+                <img src="images/bingx.webp" alt="" />
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="align-items-center text-align-center d-flex justify-content-center"
+        >
+          <ul class="list-group">
+            <li class="list-group-item text-center">official patners</li>
+            <li class="list-group-item">
+              <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/abm_footer_600x200.webp"
+                      alt=""
+                      height="50px" /><img
+                      src="images/Ascott_Logo_wo_Crest_Blue.webp"
+                      alt=""
+                      height="30px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img src="images/cadbury_footer_600x200.webp" alt="" /><img
+                      src="images/carling_footer_600x200.webp"
+                      alt=""
+                      height="30px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/champions_travel_footer_600x200.webp"
+                      alt="" /><img
+                      src="images/damac_footer_600x200.webp"
+                      alt=""
+                      height="30px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/easports_footer_600x200.webp"
+                      alt="" /><img
+                      src="images/fpt_footer_600x200.webp"
+                      alt=""
+                      height="30px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/linglone_footer_600x200.webp"
+                      alt="" /><img
+                      src="images/Main_Website_Badge_-_Colour.webp"
+                      alt=""
+                      height="30px"
+                  /></a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="list-group-item">
+              <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/msc_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/damac_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/predator_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/mws_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/msport_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="list-group-item text-center">
+              <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/abm_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/ticketmaster_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+                <li class="list-group-item">
+                  <a href=""
+                    ><img
+                      src="images/twilio_footer_600x200.webp"
+                      alt=""
+                      height="50px"
+                  /></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pt-5">
+      <div class="container p-5">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <h5>Chelsea Football Club</h5>
+            <p>
+              Stamford Bridge<br />
+              Fulham Road<br />
+              London<br />
+              SW6 1HS
+            </p>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <h5>Ticket Support</h5>
+            <div class="footer-links">
+              <a href="#">Contact Us</a>
+              <a href="#">FAQs</a>
+              <a href="#">Accessibility</a>
+              <a href="#">Stadium Guide</a>
+              <a href="#">Membership</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <h5>Legal</h5>
+            <div class="footer-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Cookies Policy</a>
+              <a href="#">Terms & Conditions</a>
+              <a href="#">Sustainability Policy</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright text-center">
+          <p>
+            © 2025 Chelsea FC. All rights reserved. No part of this site may be
+            reproduced without our written permission.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+
